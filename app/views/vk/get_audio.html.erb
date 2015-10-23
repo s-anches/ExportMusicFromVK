@@ -1,0 +1,5 @@
+	<% @music.each do |music| %>
+		<% if music.respond_to?(:artist) && music.respond_to?(:title) %>
+			<%= music.artist %> - <%= music.title %><br>
+		<% end %>
+	<% end %>
