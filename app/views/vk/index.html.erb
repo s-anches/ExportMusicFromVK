@@ -1,0 +1,16 @@
+<% if @vk %>
+	<% if @user[0].respond_to?(:first_name) && @user[0].respond_to?(:last_name) %>
+		Добро пожаловать, <%= @user[0].first_name %> <%= @user[0].last_name %> <br>
+	<% end %>
+
+	<%= link_to 'Logout', logout_url %> <br><br>
+
+	<% @music.each do |music| %>
+		<% if music.respond_to?(:artist) && music.respond_to?(:title) %>
+			<%= music.artist %> - <%= music.title %><br>
+		<% end %>
+	<% end %>
+
+<% else %>
+	<%= link_to 'Login to VK', login_url %>
+<% end %>
