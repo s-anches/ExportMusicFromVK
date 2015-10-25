@@ -23,6 +23,6 @@ module ExportMusicFromVk
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.web_console.whitelisted_ips = '178.204.222.0/10'
+    config.web_console.whitelisted_ips = '94.180.100.0/10'
   end
 end

@@ -4,12 +4,10 @@
 	<% end %>
 
 	<%= link_to 'Logout', logout_url %> <br><br>
+	<%= button_to "Export", { action: "get_audio" }, remote: true, form: { "data-type" => "html" }, form_class: "export" %>
 
-	<% @music.each do |music| %>
-		<% if music.respond_to?(:artist) && music.respond_to?(:title) %>
-			<%= music.artist %> - <%= music.title %><br>
-		<% end %>
-	<% end %>
+	<%= button_to "Save ALL", { action: "save_all" }, remote: true, form: { "data-type" => "json" }, form_class: "save_all" %>
+	<div id="export"></div>
 
 <% else %>
 	<%= link_to 'Login to VK', login_url %>

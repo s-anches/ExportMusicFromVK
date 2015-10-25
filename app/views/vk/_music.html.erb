@@ -1,0 +1,9 @@
+Кол-во треков: <%= @music[0] %><br>
+
+<% id = 0 %>
+<% @music.each do |music| %>
+	<% if music.respond_to?(:title) %>
+		<%= button_to "#{id}. #{music.artist} - #{music.title}", { action: "save_file", :artist => music.artist, :title => music.title, :url => music.url, :id => id }, remote: true, form: { "data-type" => "json", :id => "save_track", "data-id" => id } %>
+	<% end %>
+	<% id = id + 1 %>
+<% end %>

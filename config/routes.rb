@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'callback' => 'vk#create'
   get 'login' => 'vk#new'
   get 'logout' => 'vk#destroy'
+  post 'vk/get_audio' => 'vk#get_audio'
+  post 'vk/save_file' => 'vk#save_file'
+  post 'vk/save_all' => 'vk#save_all'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
